@@ -83,6 +83,7 @@ private:
     void resizeEvent(QResizeEvent* event) override final;
     void showEvent(QShowEvent* event) override final;
     void keyPressEvent(QKeyEvent* event) override final;
+    bool viewportEvent(QEvent* event) override final;
 
 private:
     QGVMap* mGeoMap;
@@ -102,4 +103,5 @@ private:
     QScopedPointer<QGraphicsScene> mQGScene;
     QScopedPointer<QGVMapRubberBand> mSelectionRect;
     QScopedPointer<QMenu> mContextMenu;
+    qreal totalScaleFactor = 1;
 };
